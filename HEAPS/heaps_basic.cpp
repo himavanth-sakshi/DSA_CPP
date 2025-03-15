@@ -48,6 +48,46 @@ class heap{
             cout<<arr[i]<<" ";
         }cout<<endl;
     }
+
+
+    // function to delete root node
+    /*whats the logic?? 
+    1. first when we delete swap the last node in array to root node
+    2. 
+    
+    */
+
+    void deletionHeap(){
+        if(size ==0){
+            cout<< "nothing to delete"; 
+            return; 
+        }
+
+        arr[1]=arr[size]; // replacing the root node with last node
+        size--; // deleting the last node
+        
+        int i = 1;
+        while(i<size){
+            int leftIndex = 2*i; 
+            int rightIndex = 2*i + 1; 
+
+            //swapping the heap to get the max Heap 
+            if(leftIndex < size && arr[i]<arr[leftIndex]){
+                swap(arr[i],arr[leftIndex]);
+                i = leftIndex;
+            }
+
+            else if(rightIndex < size && arr[i]<arr[rightIndex]){
+                swap(arr[i],arr[rightIndex]);
+                i = rightIndex;
+            }
+            else{
+                return;
+            }
+        }
+    }
+
+    
 };
 
 
@@ -61,6 +101,10 @@ int main(){
     h.insert(45); 
     h.insert(125); 
 
+
+    h.print();
+
+    h.deletionHeap();
 
     h.print();
     return 0; 

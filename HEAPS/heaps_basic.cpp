@@ -12,7 +12,7 @@ class heap{
     heap(){ 
         arr[0]= -1; /*This ensures 1-based indexing, 
         simplifying heap operations, maintaining 
-        correct parent-child calculations, and preventing logical errors.*/
+        correct parent-child calculations, and preventing logical error.*/
         size=0; // initialising a heap with no elements 
     }
 
@@ -51,11 +51,6 @@ class heap{
 
 
     // function to delete root node
-    /*whats the logic?? 
-    1. first when we delete swap the last node in array to root node
-    2. 
-    
-    */
 
     void deletionHeap(){
         if(size ==0){
@@ -87,7 +82,26 @@ class heap{
         }
     }
 
-    
+    void heapify(int arr[], int i){ 
+        int largest = i; 
+        int left = 2*i; 
+        int right = 2*i +1; 
+
+        if(leftIndex < n && arr[largest]<arr[left]){
+            largest = 
+        }
+
+        else if(rightIndex < size && arr[i]<arr[rightIndex]){
+            swap(arr[i],arr[rightIndex]);
+            i = rightIndex;
+        }
+        else{
+            return;
+        }
+
+    }
+
+
 };
 
 
